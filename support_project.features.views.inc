@@ -3,7 +3,7 @@
 /**
  * Helper to implementation of hook_views_default_views().
  */
-function _basic_project_views_default_views() {
+function _support_project_views_default_views() {
   $views = array();
 
   // Exported view: project_display
@@ -81,7 +81,7 @@ function _basic_project_views_default_views() {
     'type' => array(
       'operator' => 'in',
       'value' => array(
-        'basic_project' => 'basic_project',
+        'support_project' => 'support_project',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -114,7 +114,7 @@ function _basic_project_views_default_views() {
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
-    'spaces_feature' => 'basic_project',
+    'spaces_feature' => 'support_project',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',

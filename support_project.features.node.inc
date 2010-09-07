@@ -5,8 +5,8 @@
  */
 function _basic_project_node_info() {
   $items = array(
-    'basic_project' => array(
-      'name' => t('Basic Project'),
+    'support_project' => array(
+      'name' => t('Support Project'),
       'module' => 'features',
       'description' => t('Provides a holder for support tickets if required.'),
       'has_title' => '1',
