@@ -18,6 +18,77 @@ function support_project_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => 'Nid',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'relationship' => 'none',
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 1,
+        'path' => 'support/[nid]',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 0,
+        'ellipsis' => 0,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 0,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
+    ),
     'timestamp' => array(
       'label' => '',
       'alter' => array(
@@ -48,39 +119,6 @@ function support_project_views_default_views() {
       'table' => 'history_user',
       'field' => 'timestamp',
       'relationship' => 'none',
-    ),
-    'title' => array(
-      'label' => 'Title',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 0,
-        'ellipsis' => 0,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 1,
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Override',
-      ),
     ),
   ));
   $handler->override_option('sorts', array(
@@ -141,7 +179,7 @@ function support_project_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
     'spaces_feature' => 'support_project',
-    'perm' => 'create support_project content',
+    'perm' => '',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
@@ -150,56 +188,12 @@ function support_project_views_default_views() {
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
-  $handler->override_option('style_plugin', 'table');
+  $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
-    'columns' => array(
-      'timestamp' => 'timestamp',
-      'nid' => 'nid',
-      'title' => 'title',
-      'field_ticket_type_value' => 'field_ticket_type_value',
-      'field_ticket_priority_value' => 'field_ticket_priority_value',
-      'field_ticket_state_value' => 'field_ticket_state_value',
-      'created' => 'created',
-      'last_updated' => 'last_updated',
-    ),
-    'info' => array(
-      'timestamp' => array(
-        'separator' => '',
-      ),
-      'nid' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'title' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'field_ticket_type_value' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'field_ticket_priority_value' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'field_ticket_state_value' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'created' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-      'last_updated' => array(
-        'sortable' => 1,
-        'separator' => '',
-      ),
-    ),
-    'default' => 'field_ticket_priority_value',
+    'columns' => '4',
+    'alignment' => 'horizontal',
+    'fill_single_line' => 1,
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->override_option('path', 'support/projects');

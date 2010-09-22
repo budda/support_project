@@ -10,7 +10,7 @@ function support_project_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'support_project';
   $context->description = 'A simple CCK driven project system';
-  $context->tag = 'Support project';
+  $context->tag = 'Support';
   $context->conditions = array(
     'node' => array(
       'values' => array(
@@ -38,7 +38,7 @@ function support_project_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A simple CCK driven project system');
-  t('Support project');
+  t('Support');
 
   $export['support_project'] = $context;
   return $export;
