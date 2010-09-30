@@ -23,12 +23,20 @@ function support_project_context_default_contexts() {
     'views' => array(
       'values' => array(
         'support_project_list' => 'support_project_list',
+        'support_ticket_list:page_2' => 'support_ticket_list:page_2',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(),
+      'blocks' => array(
+        'views--exp-support_ticket_list-page_2' => array(
+          'module' => 'views',
+          'delta' => '-exp-support_ticket_list-page_2',
+          'region' => 'right',
+          'weight' => 0,
+        ),
+      ),
       'layout' => 'default',
     ),
     'menu' => 'support',
