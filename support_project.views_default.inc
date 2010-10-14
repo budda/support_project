@@ -72,7 +72,7 @@ function support_project_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 1,
+      'link_to_node' => 0,
       'spaces' => array(
         'frontpage' => 0,
         'type' => 'spaces_og',
@@ -92,7 +92,7 @@ function support_project_views_default_views() {
         'alter_text' => 1,
         'text' => 'Support Tickets',
         'make_link' => 1,
-        'path' => 'support/[nid]',
+        'path' => 'node/[nid]/tickets',
         'link_class' => '',
         'alt' => '',
         'prefix' => '',
@@ -119,6 +119,9 @@ function support_project_views_default_views() {
       'table' => 'node',
       'field' => 'nid',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
     'field_livesite_url' => array(
       'label' => '',
@@ -222,7 +225,7 @@ function support_project_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Support Tickets');
+  $handler->override_option('title', 'Support Projects');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
@@ -252,7 +255,7 @@ function support_project_views_default_views() {
   $translatables['support_project_list'] = array(
     t('Defaults'),
     t('Page'),
-    t('Support Tickets'),
+    t('Support Projects'),
   );
 
   $views[$view->name] = $view;
