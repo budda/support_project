@@ -15,6 +15,7 @@ function support_project_context_default_contexts() {
     'node' => array(
       'values' => array(
         'support_project' => 'support_project',
+        'support_ticket' => 'support_ticket',
       ),
       'options' => array(
         'node_form' => '1',
@@ -29,14 +30,7 @@ function support_project_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(
-        'views--exp-support_ticket_list-page_2' => array(
-          'module' => 'views',
-          'delta' => '-exp-support_ticket_list-page_2',
-          'region' => 'right',
-          'weight' => 0,
-        ),
-      ),
+      'blocks' => array(),
       'layout' => 'default',
     ),
     'menu' => 'support',
